@@ -23,6 +23,10 @@ import { Exo2Component } from './components/correction/exo2/exo2.component';
 import { DemoDirDirective } from './components/demo5/demo-dir.directive';
 import { RecapComponent } from './components/recap/recap.component';
 import { Enfant1Component } from './components/demo6/enfant1/enfant1.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SalutationComponent } from './components/salutation/salutation.component';
+import { ShopComponent } from './components/shop/shop.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,11 @@ import { Enfant1Component } from './components/demo6/enfant1/enfant1.component';
     Exo2Component,
     DemoDirDirective,
     RecapComponent,
-    Enfant1Component
+    Enfant1Component,
+    NotFoundComponent,
+    SalutationComponent,
+    ShopComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
