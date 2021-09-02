@@ -26,4 +26,27 @@ export class StockProductService {
     if (products.length > 0) return products[0];
     return undefined
   }
+
+  public Post(entry : IProduct) : number{
+    let id : number = Math.max(...this.Products.map(p => p.id))+1;
+    entry.id = id;
+    this._products.push(entry);
+    return id;
+  }
+
+  public Delete(id : number) : void{
+    this._products = this._products.filter(p => p.id != id);
+  }
+
+  public Update(id: number, entry : IProduct) : void{
+    let found : boolean = false;
+    for (let index = 0; index < this._products.length && !found; index ++) {
+      if(this._products[index].id == id){
+        found = true;
+        this._products[index].name = entry.name;
+        this._products[index].description = entry.description;
+        this._products[index].price = entry.price;
+      }
+    }
+  }
 }
