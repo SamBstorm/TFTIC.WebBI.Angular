@@ -1,3 +1,5 @@
+import { SessionGuard } from './guards/session.guard';
+import { ProductResolverService } from './services/product-resolver.service';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -25,8 +27,13 @@ const routes: Routes = [
   { path : "demo7", component : Demo7Component},
   { path : "correction", component : CorrectionComponent},
   { path : "salutation/:param", component : SalutationComponent},
-  { path : "shop", component : ShopComponent},
-  { path : "product-details/:id", component : ProductDetailsComponent},
+  { path : "shop", component : ShopComponent, canActivate : [SessionGuard]},
+  { path : "product-details/:id", component : ProductDetailsComponent, canActivate : [SessionGuard]},
+  { 
+    path : "product-details-resolver/:id",
+    resolve: {product : ProductResolverService},
+    component : ProductDetailsComponent
+  },
   { path : 'notfound', component : NotFoundComponent},
   { path : '**', redirectTo : 'notfound'}
 ];

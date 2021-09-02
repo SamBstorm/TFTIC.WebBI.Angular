@@ -27,6 +27,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SalutationComponent } from './components/salutation/salutation.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductDetailsResolverComponent } from './components/product-details-resolver/product-details-resolver.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     NotFoundComponent,
     SalutationComponent,
     ShopComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProductDetailsResolverComponent
   ],
   imports: [
     BrowserModule,
